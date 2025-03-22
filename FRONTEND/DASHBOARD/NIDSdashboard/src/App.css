@@ -1,0 +1,307 @@
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #e9edc9;
+  color: #463f3a;
+  font-family: 'Montserrat', sans-serif;
+   /* justify-content: center; Center horizontally */
+   /* align-items: center; Center vertically */
+}
+
+.grid-container{
+  display: grid;
+  grid-template-columns: 260px 1fr 1fr 1fr;
+  grid-template-rows: 0.2fr 3fr;
+  grid-template-areas: 
+  'sidebar header header header' 
+  'sidebar main main main';
+  height: 100vh;
+}
+
+/* Header */
+.header{
+  grid-area: header;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 30px 0 30px;
+  box-shadow: 0 6px 7px -3px rgba(0, 0, 0, 0.35);
+}
+
+.menu-icon {
+  display: none;
+}
+/* End Header  */
+
+/* Sidebar  */
+#sidebar {
+  grid-area: sidebar;
+  height: 100%;
+  background-color: #ccd5ae;
+  overflow-y: auto;
+  transition: all 0.5s;
+  -webkit-transition: all 0.5s;
+}
+
+.sidebar-title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 30px 0px 30px;
+  margin-bottom: 30px;
+}
+
+.sidebar-title > span {
+  display: none;
+}
+
+.sidebar-brand {
+  margin-top: 15px;
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.sidebar-list {
+  padding: 0;
+  list-style-type: none;
+}
+
+.sidebar-list-item {
+  padding: 20px 20px 20px 20px;
+  font-size: 18px;
+}
+
+.sidebar-list-item:hover {
+  background-color: #f4f3ee;
+  cursor: pointer;
+}
+
+.sidebar-list-item > a {
+  text-decoration: none;
+  color: #463f3a;
+}
+
+.sidebar-responsive {
+  display: inline !important;
+  position: absolute;
+  /*
+    we want the z-index of the sidebar higher so that
+    the charts are not showing over the sidebar 
+    on small screens
+  */
+  z-index: 12 !important;
+}
+
+/* End Sidebar  */
+
+/* Main  */  
+.main-container {
+  grid-area: main;
+  overflow-y: auto;
+  padding: 20px 20px;
+  color: #495057;
+}
+
+.main-title {
+  display: flex;
+  justify-content: space-between;
+}
+
+.main-cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 20px;
+  margin: 15px 0;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  padding: 10px 40px;
+  border-radius: 26px;
+  
+}
+
+.card:first-child:hover {
+  background-color: #77dada;
+  cursor: pointer;
+  
+}
+
+.card:nth-child(2):hover {
+  background-color: #8f71d5;
+  cursor: pointer;
+  
+}
+
+.card:nth-child(3):hover {
+  background-color: #db71bd;
+  cursor: pointer;
+  
+}
+
+
+.card:first-child {
+  background-color: #ecf8f8;
+  backdrop-filter: blur(5px);
+  box-sizing: border-box;
+  box-shadow: 35px 35px 68px 0px rgba(197, 225, 167, 0.5) ,
+              inset -8px -8px 16px 0px rgba(197, 225, 167, 0.6),
+              inset 0px 11px 28px 0px rgb(255, 255, 255);
+
+}
+
+.card:nth-child(2) {
+  background-color: #d3c4f5;
+  backdrop-filter: blur(5px);
+  box-sizing: border-box;
+  box-shadow: 35px 35px 68px 0px rgba(197, 225, 167, 0.5) ,
+              inset -8px -8px 16px 0px rgba(197, 225, 167, 0.6),
+              inset 0px 11px 28px 0px rgb(255, 255, 255);
+}
+
+.card:nth-child(3) {
+  background-color: #FFEDFA;
+  backdrop-filter: blur(5px);
+  box-sizing: border-box;
+  box-shadow: 35px 35px 68px 0px rgba(197, 225, 167, 0.5) ,
+              inset -8px -8px 16px 0px rgba(197, 225, 167, 0.6),
+              inset 0px 11px 28px 0px rgb(255, 255, 255);
+}
+
+.card-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.card-inner > .card_icon {
+  font-size: 25px;
+}
+
+.charts {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  margin-top: 60px;
+  height: 300px;
+}
+
+/* End Main  */
+
+/* Medium <= 992px */
+  
+@media screen and (max-width: 992px) {
+  .grid-container {
+    grid-template-columns: 1fr;
+    grid-template-rows: 0.2fr 3fr;
+    grid-template-areas:
+      'header'
+      'main';
+  }
+
+  #sidebar {
+    display: none;
+  }
+
+  .menu-icon {
+    display: inline;
+  }
+
+  .sidebar-title > span {
+    display: inline;
+  }
+}
+/* Small <= 768px */
+  
+@media screen and (max-width: 768px) {
+  .main-cards {
+    grid-template-columns: 1fr;
+    gap: 10px;
+    margin-bottom: 0;
+  }
+
+  .chart-container {
+    grid-template-columns: 1fr;
+    margin-top: 30px;
+  }
+}
+
+/* Extra Small <= 576px */
+
+@media screen and (max-width: 576px) {
+  .hedaer-left {
+    display: none;
+  }
+}
+
+/* table */
+.glass-table-container{
+  width: fit-content;
+  max-width: 1200px;
+  margin: 30px auto;
+}
+
+.glass-table {
+  background:  #f6f3f3 ; /* semi-transparent white */
+  border-radius: 12px;
+  padding: 20px;
+  backdrop-filter: blur(16px) saturate(180%); /* creates the frosted glass effect */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border: 1px outset #fff ; 
+  color: #EFF3EA; /* text color */
+  width: 100%;
+}
+
+.glass-table th, .glass-table td {
+  padding: 5px 100px;
+  text-align: center;
+}
+
+.glass-table th {
+  background-color: rgba(233, 227, 227, 0.2);
+  color: #72716d;
+  font-weight: bold;
+}
+
+.glass-table td {
+  background-color: rgba(0, 0, 0, 0.1);
+  color: #787370;
+}
+
+.glass-table tr:nth-child(even) td {
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+.glass-table tr:hover td {
+  background-color: #D7D3BF;
+}
+
+/*end table*/
+
+/*predictions page*/
+.predictions-page{
+  position: relative;
+  background: rgba(255, 255, 255, 0.2); /* Semi-transparent background */
+  border-radius: 20px;
+  padding: 30px;
+  max-width: 800px;
+  margin: 50px auto;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(10px); /* Apply the glassmorphism blur effect */
+  border: 2px solid rgba(255, 255, 255, 0.4); /* Optional: Add a border for the frosted look */
+  color: #7a7f85;
+}
+
+.chart-container {
+  width: 80%;
+  margin: 0 auto;
+  padding: 20px 30px;
+}
+
+h2 {
+  text-align: center;
+}
