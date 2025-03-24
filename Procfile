@@ -1,1 +1,1 @@
-web: gunicorn mlnids.wsgi
+web: gunicorn mlnids.wsgi:application
