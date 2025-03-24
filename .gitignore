@@ -3,7 +3,7 @@ database.ini
 __pycache__
 .vscode
 
-djangonids/mlnids/settings.py
+
 dataset/CICIDS2017.csv
 dataset/Benign-Monday-no-metadata.parquet
 dataset/DoS-Wednesday-no-metadata.parquet
@@ -13,4 +13,6 @@ dataset/Portscan-Friday-no-metadata.parquet
 dataset/Infiltration-Thursday-no-metadata.parquet
 dataset/WebAttacks-Thursday-no-metadata.parquet
 dataset/DDoS-Friday-no-metadata.parquet
-
+database_production.ini
+.env
+djangonids/.env

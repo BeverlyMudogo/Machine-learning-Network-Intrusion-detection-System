@@ -32,7 +32,7 @@ from rest_framework import status
 
 @api_view(['GET'])
 def get_predictions(request):
-    predictions = Predictions.objects.all().order_by('-prediction_timestamp')[:30]
+    predictions = Predictions.objects.all().order_by('-prediction_timestamp')[:50]
     data = [{"id": p.packet_id, "prediction": p.prediction, "Label": p.label, "timestamp": p.prediction_timestamp} for p in predictions]
     return Response(data, status=status.HTTP_200_OK)
 

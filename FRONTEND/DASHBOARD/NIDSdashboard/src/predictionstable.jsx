@@ -4,10 +4,14 @@ import axios from "axios";
 const PredictionsTable = () => {
   const [data, setData] = useState([]);
 
+  const apiUrl = window.location.hostname.includes("railway")  // Check if the URL contains "railway" for production
+  ? "https://postgres-production-1ba4.up.railway.app"  // Production URL
+  : "http://127.0.0.1:8000";  // Local URL
+
   // Fetch predictions from the API
   useEffect(() => {
     axios
-      .get("http://127.0.0.1:8000/api/get_predictions/")
+      .get(`${apiUrl}/api/get_predictions/`)
       .then((response) => {
         setData(response.data);
       })
