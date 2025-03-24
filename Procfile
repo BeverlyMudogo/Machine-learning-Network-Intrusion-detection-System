@@ -1,2 +1,2 @@
-web: gunicorn myapp.wsgi:application --log-level info
-
+release: python manage.py migrate
+web: gunicorn mlnids.wsgi:application
