@@ -4,24 +4,24 @@ import joblib
 from config import config
 
 # Load the trained model
-NIDS_pipeline = joblib.load("/mnt/c/ML projects/ML-NIDS CIC-IDS2017/saved models/pipeline_v0.1.0.pkl")
+NIDS_pipeline = joblib.load("C:\ML projects\ML-NIDS CIC-IDS2017\saved models\pipeline_v0.1.0.pkl")
 
 # Define the label mapping (adjust this based on your model's output)
 label_mapping = {
     0: 'Benign',  # Label 0 corresponds to "Benign"
-    1: 'DoS Hulk',
-    2: 'DDoS',
-    3: 'DoS GoldenEye',
-    4: 'FTP-Patator',
-    5: 'DoS slowloris',
+    1: 'FTP-Patator',
+    2: 'Web Attack – XSS',
+    3: 'SSH-Patator',
+    4: 'PortScan',
+    5: 'DoS GoldenEye',
     6: 'DoS Slowhttptest',
-    7: 'SSH-Patator',
-    8: 'PortScan',
-    9: 'Web Attack – Brute Force',
+    7: 'DoS Hulk',
+    8: 'DoS slowloris',
+    9: 'DDoS',
     10: 'Bot',
-    11: 'Web Attack – XSS',
+    11: 'Web Attack – Brute Force',
     12: 'Infiltration',
-    13: 'Web Attack – Sql Injection',
+    13: 'DoS Hulk',
     14: 'Heartbleed'
 }
 
