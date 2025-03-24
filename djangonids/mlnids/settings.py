@@ -71,7 +71,8 @@ INSTALLED_APPS = [
     'rest_framework',
     'rest_framework_simplejwt',
     'channels',  # WebSockets
-    'myapp',  # Replace with your actual app name
+    'myapp',  #  actual app name
+    'mlnids', 
 ]
 
 # Django REST Framework Settings
