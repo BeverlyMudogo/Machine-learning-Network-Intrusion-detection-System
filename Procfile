@@ -1,2 +1,2 @@
-web: gunicorn djangonids.mlnids.wsgi:application --log-level info
+web: gunicorn myapp.wsgi:application --log-level info
 
