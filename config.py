@@ -1,6 +1,6 @@
 from configparser import ConfigParser
 
-def config(filename="C:\ML projects\ML-NIDS CIC-IDS2017\database.ini", section="postgresql"):
+def config(filename="/home/sakie/database.ini", section="railway"):
     #create a parser
     parser=ConfigParser()
     

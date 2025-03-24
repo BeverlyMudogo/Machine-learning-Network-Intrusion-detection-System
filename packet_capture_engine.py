@@ -13,7 +13,7 @@ def connect():
     try:
         params = config()
         print('Connecting to the postgreSQL database....')
-        connection = psycopg2.connect(**params)
+        connection = psycopg2.connect(**params, sslmode="require")
 
         # Create a cursor
         crsr = connection.cursor()
@@ -41,7 +41,7 @@ def connect():
 
 
 class PacketCaptureEngine:
-    def __init__(self, interface='Wi-Fi', capture_duration=60):
+    def __init__(self, interface='Wi-Fi remote capture', capture_duration=60):
         self.interface = interface
         self.capture_duration = capture_duration
         self.flow_features = defaultdict(lambda: defaultdict(float))
@@ -334,7 +334,7 @@ class PacketCaptureEngine:
         return df
        
 if __name__ == "__main__":
-    engine = PacketCaptureEngine(interface='Wi-Fi', capture_duration=60)
+    engine = PacketCaptureEngine(interface='Wi-Fi remote capture', capture_duration=60)
     df = engine.capture_packets()
     print(df)
     

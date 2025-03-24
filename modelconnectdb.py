@@ -4,7 +4,7 @@ import joblib
 from config import config
 
 # Load the trained model
-NIDS_pipeline = joblib.load("C:\ML projects\ML-NIDS CIC-IDS2017\saved models\pipeline_v0.1.0.pkl")
+NIDS_pipeline = joblib.load("/mnt/c/ML projects/ML-NIDS CIC-IDS2017/saved models/pipeline_v0.1.0.pkl")
 
 # Define the label mapping (adjust this based on your model's output)
 label_mapping = {

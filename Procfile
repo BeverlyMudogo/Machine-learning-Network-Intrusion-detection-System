@@ -1,2 +1,1 @@
-release: python manage.py migrate
-web: gunicorn mlnids.wsgi:application
+web: gunicorn --chdir djangonids mlnids.wsgi:application --log-level debug
