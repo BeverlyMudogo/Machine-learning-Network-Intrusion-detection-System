@@ -12,9 +12,8 @@ function App() {
   const [message, setMessage] = useState("");
   const [openSidebarToggle, setOpenSidebarToggle] = useState(false);
 
-  const apiUrl = window.location.hostname.includes("railway")
-    ? "https://postgres-production-1ba4.up.railway.app"
-    : "http://127.0.0.1:8000";
+  const apiUrl = process.env.REACT_APP_API_URL || "http://127.0.0.1:8000";  // For local, use localhost, but for production, use Railway URL
+    
 
   // Generic API function
   const callAPI = async (endpoint) => {
