@@ -1,1 +1,1 @@
-web: gunicorn mlnids.wsgi --log file--
+web: gunicorn mlnids.wsgi --log-file
