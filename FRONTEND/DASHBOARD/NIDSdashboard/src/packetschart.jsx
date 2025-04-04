@@ -1,69 +1,57 @@
-import React, { useState, useEffect } from "react";
-import { Line } from "react-chartjs-2";
+import React, { useEffect, useState } from "react";
 import axios from "axios";
-import {
-  Chart as ChartJS,
-  CategoryScale,
-  LinearScale,
-  PointElement,
-  LineElement,
-  Title,
-  Tooltip,
-  Legend,
-} from "chart.js";
 
-// Register ChartJS components
-ChartJS.register(
-  CategoryScale,
-  LinearScale,
-  PointElement,
-  LineElement,
-  Title,
-  Tooltip,
-  Legend
-);
+const PacketTrafficChart = () => {
+  const [data, setData] = useState([]);
 
-function PacketTrafficChart() {
-  const [packetData, setPacketData] = useState([]);
+  const apiUrl = "http://127.0.0.1:8000"; 
+  
 
-  // Fetch the packet data
+  // Fetch predictions from the API
   useEffect(() => {
     axios
-      .get("http://127.0.0.1:8000/api/get_packets")
+      .get(`${apiUrl}/api/get_packets`)
       .then((response) => {
-        setPacketData(response.data);
+        setData(response.data);
       })
       .catch((error) => {
-        console.error("Error fetching packet data:", error);
+        console.error("Error fetching packets:", error);
       });
   }, []);
 
-  // Prepare data for the chart
-  const prepareChartData = () => {
-    // Here I'm using packet ID as time (assuming sequential)
-    const packetTimes = packetData.map((item) => item.id); // Using ID as time for simplicity
-    const packetValues = packetData.map(() => 1); // Count each packet as 1
-
-    return {
-      labels: packetTimes, // Packet IDs as X-axis (time)
-      datasets: [
-        {
-          label: "Actual Traffic (Packets)",
-          data: packetValues,
-          borderColor: "purple",  // Purple color for packet data
-          borderWidth: 2,
-          fill: false,
-        },
-      ],
-    };
-  };
-
   return (
-    <div className="chart-container">
-      <h2>Actual Traffic (Packet Data)</h2>
-      <Line data={prepareChartData()} />
+    <div className="glass-table-container">
+      <h2 style={{ textAlign: "center", color: "#7a7f85", marginBottom: "20px" }}>Packet captures</h2>
+      <table className="glass-table" border="1" cellPadding="8">
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Source Ip</th>
+            <th>Destination IP</th>
+            <th>Protocol</th>
+          </tr>
+        </thead>
+        <tbody>
+          {data.length > 0 ? (
+            data.map((packetcaptures) => (
+              <tr key={packetcaptures.id}>
+                <td>{packetcaptures.id}</td>
+                <td>{packetcaptures.SourceIP}</td>
+                <td>{packetcaptures.DestinationIp}</td>
+                <td>{packetcaptures.protocol}</td>
+              </tr>
+            ))
+          ) : (
+            <tr>
+              <td colSpan={4} style={{ textAlign: "center" }}>
+                No Data Available
+              </td>
+            </tr>
+          )}
+        </tbody>
+      </table>
     </div>
   );
-}
+};
 
 export default PacketTrafficChart;

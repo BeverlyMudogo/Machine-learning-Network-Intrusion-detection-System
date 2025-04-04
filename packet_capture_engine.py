@@ -316,7 +316,9 @@ class PacketCaptureEngine:
         for packet in cap.sniff_continuously():
             if time.time() - start_time > self.capture_duration:
                 break
+
             
+            #continuously extract features from each packet
             self.extract_features(packet)    
 
                      

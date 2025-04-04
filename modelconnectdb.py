@@ -2,9 +2,16 @@ import psycopg2
 import pandas as pd
 import joblib
 from config import config
+import os
+
+# Get the absolute path of the script's directory
+base_dir = os.path.dirname(os.path.abspath(__file__))
+
+# Construct the full path to the model file
+model_path = os.path.join(base_dir, "saved models","pipeline_v0.1.0.pkl")
 
 # Load the trained model
-NIDS_pipeline = joblib.load("C:\ML projects\ML-NIDS CIC-IDS2017\saved models\pipeline_v0.1.0.pkl")
+NIDS_pipeline = joblib.load(model_path)
 
 # Define the label mapping (adjust this based on your model's output)
 label_mapping = {

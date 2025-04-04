@@ -4,7 +4,7 @@ import axios from "axios";
 const PredictionsTable = () => {
   const [data, setData] = useState([]);
 
-  const apiUrl = process.env.REACT_APP_API_URL || "http://127.0.0.1:8000"; 
+  const apiUrl = "http://127.0.0.1:8000"; 
   
 
   // Fetch predictions from the API

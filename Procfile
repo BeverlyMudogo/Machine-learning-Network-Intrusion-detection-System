@@ -1,1 +1,0 @@
-web: gunicorn --chdir djangonids mlnids.wsgi:application --log-level debug

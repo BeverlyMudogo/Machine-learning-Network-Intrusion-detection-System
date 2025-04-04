@@ -113,3 +113,4 @@ websockets==15.0.1
 whitenoise==6.9.0
 xgboost==3.0.0
 zipp==3.21.0
+keyboard==0.13.5

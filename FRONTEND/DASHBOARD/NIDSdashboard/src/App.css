@@ -1,7 +1,7 @@
 body {
   margin: 0;
   padding: 0;
-  background-color: #e9edc9;
+  background-color: #E9ECEF;
   color: #463f3a;
   font-family: 'Montserrat', sans-serif;
    /* justify-content: center; Center horizontally */
@@ -38,7 +38,7 @@ body {
 #sidebar {
   grid-area: sidebar;
   height: 100%;
-  background-color: #ccd5ae;
+  background-color: #7499c0;
   overflow-y: auto;
   transition: all 0.5s;
   -webkit-transition: all 0.5s;
@@ -148,8 +148,8 @@ body {
   background-color: #ecf8f8;
   backdrop-filter: blur(5px);
   box-sizing: border-box;
-  box-shadow: 35px 35px 68px 0px rgba(197, 225, 167, 0.5) ,
-              inset -8px -8px 16px 0px rgba(197, 225, 167, 0.6),
+  box-shadow: 35px 35px 68px 0px rgba(155, 155, 155, 0.5) ,
+              inset -8px -8px 16px 0px rgba(155, 155, 155, 0.5),
               inset 0px 11px 28px 0px rgb(255, 255, 255);
 
 }
@@ -158,8 +158,8 @@ body {
   background-color: #d3c4f5;
   backdrop-filter: blur(5px);
   box-sizing: border-box;
-  box-shadow: 35px 35px 68px 0px rgba(197, 225, 167, 0.5) ,
-              inset -8px -8px 16px 0px rgba(197, 225, 167, 0.6),
+  box-shadow: 35px 35px 68px 0px rgba(155, 155, 155, 0.5) ,
+              inset -8px -8px 16px 0px rgba(155, 155, 155, 0.5),
               inset 0px 11px 28px 0px rgb(255, 255, 255);
 }
 
@@ -167,8 +167,8 @@ body {
   background-color: #FFEDFA;
   backdrop-filter: blur(5px);
   box-sizing: border-box;
-  box-shadow: 35px 35px 68px 0px rgba(197, 225, 167, 0.5) ,
-              inset -8px -8px 16px 0px rgba(197, 225, 167, 0.6),
+  box-shadow: 35px 35px 68px 0px rgba(155, 155, 155, 0.5) ,
+              inset -8px -8px 16px 0px rgba(155, 155, 155, 0.5),
               inset 0px 11px 28px 0px rgb(255, 255, 255);
 }
 
@@ -246,7 +246,7 @@ body {
 }
 
 .glass-table {
-  background:  #f6f3f3 ; /* semi-transparent white */
+  background:  rgba( 111, 162, 221, 0.25 ) ; /* semi-transparent white */
   border-radius: 12px;
   padding: 20px;
   backdrop-filter: blur(16px) saturate(180%); /* creates the frosted glass effect */
@@ -269,7 +269,7 @@ body {
 
 .glass-table td {
   background-color: rgba(0, 0, 0, 0.1);
-  color: #787370;
+  color: #484444;
 }
 
 .glass-table tr:nth-child(even) td {
@@ -277,7 +277,7 @@ body {
 }
 
 .glass-table tr:hover td {
-  background-color: #D7D3BF;
+  background-color: #b0d4e9;
 }
 
 /*end table*/
